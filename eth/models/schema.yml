@@ -1,6 +1,13 @@
 version: 2
 
 models:
+   - name: stg_transactions_enriched
+     columns: 
+        - name: value
+          data_tests:
+            - assert_value_amount_positive:
+                field: block_number
+
    - name: stg_transactions
      description: Transaction in the Ethereum Blockchain
      columns: 
